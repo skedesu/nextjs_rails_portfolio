@@ -1,0 +1,346 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    abbr_month_names:
+    - 
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+    month_names:
+    - 
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      about_x_months:
+        one: 約1ヶ月
+        other: 約%{count}ヶ月
+      about_x_years:
+        one: 約1年
+        other: 約%{count}年
+      almost_x_years:
+        one: 1年弱
+        other: "%{count}年弱"
+      half_a_minute: 30秒前後
+      less_than_x_seconds:
+        one: 1秒以内
+        other: "%{count}秒未満"
+      less_than_x_minutes:
+        one: 1分以内
+        other: "%{count}分未満"
+      over_x_years:
+        one: 1年以上
+        other: "%{count}年以上"
+      x_seconds:
+        one: 1秒
+        other: "%{count}秒"
+      x_minutes:
+        one: 1分
+        other: "%{count}分"
+      x_days:
+        one: 1日
+        other: "%{count}日"
+      x_months:
+        one: 1ヶ月
+        other: "%{count}ヶ月"
+      x_years:
+        one: 1年
+        other: "%{count}年"
+    prompts:
+      second: 秒
+      minute: 分
+      hour: 時
+      day: 日
+      month: 月
+      year: 年
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: を受諾してください
+      blank: を入力してください
+      confirmation: と%{attribute}の入力が一致しません
+      empty: を入力してください
+      equal_to: は%{count}にしてください
+      even: は偶数にしてください
+      exclusion: は予約されています
+      greater_than: は%{count}より大きい値にしてください
+      greater_than_or_equal_to: は%{count}以上の値にしてください
+      inclusion: は一覧にありません
+      invalid: は不正な値です
+      less_than: は%{count}より小さい値にしてください
+      less_than_or_equal_to: は%{count}以下の値にしてください
+      model_invalid: 'バリデーションに失敗しました: %{errors}'
+      not_a_number: は数値で入力してください
+      not_an_integer: は整数で入力してください
+      odd: は奇数にしてください
+      other_than: は%{count}以外の値にしてください
+      present: は入力しないでください
+      required: を入力してください
+      taken: はすでに存在します
+      too_long: は%{count}文字以内で入力してください
+      too_short: は%{count}文字以上で入力してください
+      wrong_length: は%{count}文字で入力してください
+    template:
+      body: 次の項目を確認してください
+      header:
+        one: "%{model}にエラーが発生しました"
+        other: "%{model}に%{count}個のエラーが発生しました"
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: 十億
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: バイト
+          eb: EB
+          gb: GB
+          kb: KB
+          mb: MB
+          pb: PB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: "、"
+      two_words_connector: "、"
+      words_connector: "、"
+  time:
+    am: 午前
+    formats:
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
+    pm: 午後
+  active_admin:
+    dashboard: "ダッシュボード"
+    dashboard_welcome:
+      welcome: "Active Admin へようこそ。ダッシュボードの初期ページを表示しています。"
+      call_to_action: "ダッシュボードに項目を追加するために 'app/admin/dashboard.rb' を編集してください。"
+    view: "閲覧"
+    edit: "編集"
+    delete: "削除"
+    delete_confirmation: "本当に削除しますか？"
+    create_another: "%{model} を続けて作成する"
+    new_model: "%{model} を作成する"
+    edit_model: "%{model} を編集する"
+    delete_model: "%{model} を削除する"
+    details: "%{model} の詳細"
+    cancel: "取り消す"
+    empty: "空"
+    previous: "前"
+    next: "次"
+    download: "ダウンロード:"
+    has_many_new: "%{model} を追加する"
+    has_many_delete: "削除する"
+    has_many_remove: "削除する"
+    filters:
+      buttons:
+        filter: "絞り込む"
+        clear: "条件を削除する"
+      predicates:
+        contains: "を含む"
+        equals: "等しい"
+        starts_with: "で始まる"
+        ends_with: "で終わる"
+        greater_than: "より大きい"
+        less_than: "より小さい"
+        gteq_datetime: "以上"
+        lteq_datetime: "以下"
+        from: "開始"
+        to: "終了"
+    search_status:
+      headline: "検索条件:"
+      current_scope: "範囲:"
+      current_filters: "現在の絞り込み:"
+      no_current_filters: "なし"
+    status_tag:
+      "yes": "はい"
+      "no": "いいえ"
+      "unset": "いいえ"
+    main_content: "内容を表示するために %{model}#main_content を実装してください。"
+    logout: "ログアウト"
+    powered_by: "Powered by %{active_admin} %{version}"
+    sidebars:
+      filters: "検索条件"
+      search_status: "検索状態"
+    pagination:
+      empty: "%{model} は見つかりませんでした"
+      one: "<b>1</b> 件の %{model} を表示しています"
+      one_page: "<b>全 %{n}</b> 件の %{model} を表示しています"
+      multiple: "全 <b>%{total}</b> 件中 <b>%{from}&nbsp;-&nbsp;%{to}</b> 件の %{model} を表示しています"
+      multiple_without_total: "<b>%{from}&nbsp;-&nbsp;%{to}</b> 件の %{model} を表示しています"
+      per_page: "表示件数: "
+      entry:
+        one: "レコード"
+        other: "レコード"
+    any: "任意"
+    blank_slate:
+      content: "%{resource_name} はまだありません。"
+      link: "作成する"
+    dropdown_actions:
+      button_label: "操作"
+    batch_actions:
+      button_label: "一括操作"
+      default_confirmation: "本当によろしいですか？"
+      delete_confirmation: "%{plural_model} を削除してもよろしいですか？"
+      succesfully_destroyed:
+        one: "1件の %{model} を削除しました"
+        other: "%{count}件の %{plural_model} を削除しました"
+      selection_toggle_explanation: "(選択)"
+      action_label: "選択した行を%{title}"
+      labels:
+        destroy: "削除する"
+    comments:
+      created_at: "作成日"
+      resource_type: "リソース種別"
+      author_type: "作成者種別"
+      body: "本文"
+      author: "作成者"
+      add: "コメントを追加"
+      delete: "コメントを削除"
+      delete_confirmation: "本当にコメントを削除しますか？"
+      resource: "リソース"
+      no_comments_yet: "コメントはまだありません。"
+      author_missing: "匿名ユーザ"
+      title_content: "コメント (%{count})"
+      errors:
+        empty_text: "テキストが空のため、コメントは保存されませんでした。"
+    devise:
+      username:
+        title: "ユーザ名"
+      email:
+        title: "メールアドレス"
+      subdomain:
+        title: "サブドメイン"
+      password:
+        title: "パスワード"
+      sign_up:
+        title: "登録"
+        submit: "登録"
+      login:
+        title: "ログイン"
+        remember_me: "次回から自動的にログイン"
+        submit: "ログイン"
+      reset_password:
+        title: "パスワードをお忘れですか？"
+        submit: "パスワードをリセットする"
+      change_password:
+        title: "パスワードを変更する"
+        submit: "パスワードを変更する"
+      unlock:
+        title: "ロックの解除方法を送る"
+        submit: "ロックの解除方法を送る"
+      resend_confirmation_instructions:
+        title: "確認方法を再送信する"
+        submit: "確認方法を再送信する"
+      links:
+        sign_in: "サインイン"
+        sign_up: "ユーザ登録"
+        forgot_your_password: "パスワードをお忘れですか？"
+        sign_in_with_omniauth_provider: "%{provider}のアカウントを使ってログイン"
+        resend_confirmation_instructions: "ユーザ確認手順を再送する"
+        resend_unlock_instructions: "ロックの解除方法を再送する"
+    unsupported_browser:
+      headline: "ActiveAdminは、Internet Explorer 8以下はサポートはしていません。"
+      recommendation: "最新版の<a href=\"http://windows.microsoft.com/ie\">Internet Explorer</a>、<a href=\"https://chrome.google.com/\">Google Chrome</a>、もしくは<a href=\"https://mozilla.org/firefox/\">Firefox</a>を使うことを推奨します。"
+      turn_off_compatibility_view: "Internet Explorer 9以降を使っている場合、<a href=\"https://support.microsoft.com/ja-jp/help/17471\">互換表示をオフ</a>にしてください。"
+    access_denied:
+      message: "アクションを実行する権限がありません"
+    index_list:
+      table: "テーブル"
+      block: "リスト"
+      grid: "グリッド"
+      blog: "ブログ"

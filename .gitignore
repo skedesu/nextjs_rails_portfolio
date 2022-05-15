@@ -1,0 +1,10 @@
+backend/tmp/*
+backend/log/*
+backend/node_modules/*
+
+ # RubyMine
+.idea/*
+
+# passenger
+backend/passenger.3000.pid
+backend/passenger.3000.pid.lock
