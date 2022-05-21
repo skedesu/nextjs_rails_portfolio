@@ -7,3 +7,37 @@ export const GET_TOKEN = gql`
     }
   }
 `
+
+export const GET_TASKS = gql`
+  query {
+    tasks {
+      edges {
+        node {
+          id
+          detail
+          priority
+          userId
+          completedAt
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  }
+`
+
+export const GET_LANGUAGES = gql`
+  query {
+    languages {
+      edges {
+        node {
+          id
+          name
+          experience
+          from
+          remark
+        }
+      }
+    }
+  }
+`
