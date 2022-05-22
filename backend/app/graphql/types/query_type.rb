@@ -33,5 +33,12 @@ module Types
     def tasks
       Task.all
     end
+
+    field :languages, Types::LanguageType.connection_type, null: true do
+      description 'Select Languages'
+    end
+    def languages
+      Language.all
+    end
   end
 end

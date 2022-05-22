@@ -8,10 +8,22 @@ import {
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined
 const createApolloClient = () => {
+  // JWT Token 取得
+  const token: string | null =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : null
+
+  // console.log('NEXT_PUBLIC_RAILS_API_URL')
+  // console.log(process.env.NEXT_PUBLIC_RAILS_API_URL)
+  // const url = process.env.NEXT_PUBLIC_RAILS_API_URL
+  const url = 'http://127.0.0.1:8000/graphql/'
+
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: process.env.RAILS_API_URL,
+      uri: url,
+      headers: {
+        authorization: token ? `Bearer ${token}` : '',
+      },
     }),
     cache: new InMemoryCache(),
   })
