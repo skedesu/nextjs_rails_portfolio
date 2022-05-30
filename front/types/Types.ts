@@ -1,12 +1,15 @@
 export interface TASK {
-  userId: number
-  id: number
-  detail: string
-  priority: number
-  completedAt: string
-  expireData: string
-  createdAt: string
-  updatedAt: string
+  node: {
+    __typename: string
+    userId: number
+    id: number
+    detail: string
+    priority: number
+    completedAt: string
+    expireData: string
+    createdAt: string
+    updatedAt: string
+  }
 }
 
 export interface LANGUAGE {

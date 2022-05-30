@@ -10,21 +10,15 @@ import {
 } from 'recharts'
 import Title from './Title'
 
-// Generate Sales Data
-function createData(time: string, amount?: number) {
-  return { time, amount }
+// Generate Weight Data
+function createData(time: string, weight?: number) {
+  return { time, weight }
 }
 
 const data = [
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
+  { date: '2020-01-01', weight: 100 },
+  { date: '2020-01-02', weight: 200 },
+  { date: '2020-01-05', weight: 300 },
 ]
 
 export default function Chart() {
@@ -32,7 +26,7 @@ export default function Chart() {
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Weight Transition</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -44,7 +38,7 @@ export default function Chart() {
           }}
         >
           <XAxis
-            dataKey="time"
+            dataKey="date"
             stroke={theme.palette.text.secondary}
             style={theme.typography.body2}
           />
@@ -61,13 +55,13 @@ export default function Chart() {
                 ...theme.typography.body1,
               }}
             >
-              Sales ($)
+              Weight (kg)
             </Label>
           </YAxis>
           <Line
             isAnimationActive={false}
             type="monotone"
-            dataKey="amount"
+            dataKey="weight"
             stroke={theme.palette.primary.main}
             dot={false}
           />

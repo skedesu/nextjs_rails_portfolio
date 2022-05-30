@@ -5,9 +5,9 @@ module Mutations
     field :reason, String, null: true
 
     argument :id, ID, required: true
-    argument :completed_at, Boolean, required: false
+    argument :completed_at, String, required: false
     argument :detail, String, required: false
-    argument :priority, Types::PriorityEnum, required: false
+    argument :priority, Integer, required: false
     argument :expire_data, String, required: false
     argument :user_id, Int, required: true
 
@@ -15,10 +15,10 @@ module Mutations
       task_params = args.to_h
       task = Task.find(args[:id])
 
-      task_params[:completed_at] = args[:completed_at] ? Time.current : task.completed_at
+      task_params[:completed_at] = args[:completed_at].present? ? Time.current : nil
       task_params[:updated_at] = Time.current
 
-      task.update(task_params.compact)
+      task.update(task_params)
 
       {
         task: task,
