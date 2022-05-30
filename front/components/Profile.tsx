@@ -3,6 +3,7 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 import Title from './Title'
+import Chart from './Chart'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
@@ -82,7 +83,6 @@ interface STATICPROPS {
   }
 }
 
-// export const Profile: VFC<STATICPROPS> = ({ node }) => {
 export const Profile: VFC<STATICPROPS> = (edges) => {
   const [open, setOpen] = useState(true)
 
@@ -107,6 +107,19 @@ export const Profile: VFC<STATICPROPS> = (edges) => {
                 disableSelectionOnClick
               />
             </div>
+          </Paper>
+        </Grid>
+        {/* Chart */}
+        <Grid item xs={12}>
+          <Paper
+            sx={{
+              p: 2,
+              display: 'flex',
+              flexDirection: 'column',
+              height: 240,
+            }}
+          >
+            <Chart />
           </Paper>
         </Grid>
       </Grid>

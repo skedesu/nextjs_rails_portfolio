@@ -4,7 +4,7 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :user, Types::UserType.connection_type, null: true do
+    field :user, Types::UserType, null: true do
       description "Find User by ID"
       argument :id, ID, required: true
     end
@@ -19,7 +19,7 @@ module Types
       User.all
     end
 
-    field :task, Types::TaskType.connection_type, null: true do
+    field :task, Types::TaskType, null: true do
       description "Find Task by ID"
       argument :id, ID, required: true
     end

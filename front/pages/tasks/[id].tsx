@@ -1,54 +1,61 @@
 import Link from 'next/link'
 import { Layout } from '../../components/Layout'
+import TaskDetailComponent from '../../components/TaskDetailComponent'
 import { TASK } from '../../types/Types'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { initializeApollo } from '../../lib/apolloClient'
+import { GET_SINGLE_TASK, GET_ALL_TASKS_ID } from '../../queries/queries'
 
-const TaskDetail: React.FC<TASK> = ({ id, detail, completedAt }) => {
+interface STATICPROPS {
+  task: {
+    __typename: string
+    userId: number
+    id: number
+    detail: string
+    priority: number
+    completedAt: string
+    expireData: string
+    createdAt: string
+    updatedAt: string
+  }
+}
+
+const TaskDetail: React.VFC<STATICPROPS> = ({
+  task: { id, detail, priority, expireData, completedAt, createdAt, updatedAt },
+}) => {
   return (
     <Layout title="Task Detail">
-      <p className="m-4">
-        {'ID : '}
-        {id}
-      </p>
-      <p>{detail}</p>
-      <p>{completedAt}</p>
-      <Link href="/task">
-        <div>
-          <svg
-            className="w-6 h-6 mr-3"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
-            />
-          </svg>
-          <a data-testid="back-blog">Back to task-page</a>
-        </div>
-      </Link>
+      <TaskDetailComponent
+        {...{ id, detail, completedAt, expireData, priority }}
+      />
     </Layout>
   )
 }
 export default TaskDetail
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await getAllPostIds()
+  const apolloClient = initializeApollo()
+  const { data } = await apolloClient.query({
+    query: GET_ALL_TASKS_ID,
+  })
+  const paths = data.tasks.edges.map((edge) => {
+    return { params: { id: edge.node.id } }
+  })
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const post = await getPostData(ctx.params.id as string)
+  const apolloClient = initializeApollo()
+  const { data } = await apolloClient.query({
+    query: GET_SINGLE_TASK,
+    variables: { id: ctx.params.id },
+  })
   return {
     props: {
-      ...post,
+      task: data.task,
     },
   }
 }

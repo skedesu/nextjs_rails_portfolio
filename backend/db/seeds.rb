@@ -63,4 +63,11 @@ Language.first_or_create([
                             from: '2020/3',
                             remark: ''
                           },
+                          {
+                            id: 9,
+                            user_id: user.id,
+                            name: 'GraphQL',
+                            from: '2022/4',
+                            remark: ''
+                          },
                         ])

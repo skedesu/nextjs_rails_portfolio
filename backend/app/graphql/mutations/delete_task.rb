@@ -7,7 +7,7 @@ module Mutations
     argument :user_id, ID, required: true
 
     def resolve(**args)
-      task = Task.find(args[:id])
+      task = Task.find_by(id: args[:id])
       task.destroy
       {
         task: task,
